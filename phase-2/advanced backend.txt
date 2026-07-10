@@ -1,0 +1,57 @@
+Advanced javascript Backend
+_________________________________________________________________________________________________________________________
+Scope-:
+Variable kahan se access Ho sakta hai..
+_________________________________________________________________________________________________________________________
+3 Types of scope
+Global scope-:
+
+const name = "Bhai"  // Global hai — kahi bhi access ho sakta hai
+
+function greet() {
+  console.log(name)  // ✅ Access ho gaya
+}
+
+greet()  // Output: Bhai
+_________________________________________________________________________________________________________________________
+Function Scope:-
+function greet() {
+  const message = "Hello"  // Sirf is function ke andar hai
+  console.log(message)     // ✅ Access ho gaya
+}
+
+greet()
+console.log(message)  // ❌ ERROR — bahar access nahi hoga
+_________________________________________________________________________________________________________________________
+BLock Scope:-
+if (true) {
+  let x = 10        // Sirf is block {} ke andar
+  const y = 20      // Sirf is block {} ke andar
+  var z = 30        // ⚠️ var block scope nahi maanta!
+}
+
+console.log(x)  // ❌ ERROR
+console.log(y)  // ❌ ERROR
+console.log(z)  // ✅ 30 — var leak kar gaya bahar!
+_________________________________________________________________________________________________________________________
+Var VS Let VS Const :- scope ka Fark
+
+var    → Function scoped — block ko nahi maanta ⚠️
+let    → Block scoped ✅
+const  → Block scoped + value change nahi hoti ✅
+__________________________________________________________________________________________________________________________
+practise question
+
+//1. Ek global variable bana — apna naam
+// 2. Ek function bana jo us naam ko print kare
+// 3. Function ke andar ek local variable bana
+// 4. Function ke bahar us local variable ko print karne ki koshish kar
+// 5. Dekh kya hota hai
+__________________________________________________________________________________________________________________________
+Scope define karta hai ki koi variable ya function kahan se accessible hai code mein.
+JS mein 3 types hain —
+Global — poore code mein access hota hai,
+Function — sirf us function ke andar,
+Block — sirf us {} ke andar.
+var function scoped hai — block ko nahi maanta aur leak karta hai. Isliye backend mein var avoid karte hain, hamesha let ya const use karte hain.
+
